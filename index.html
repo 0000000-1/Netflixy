@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Netflixy.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #030303;
+            color: #fff;
+            /* scrollbar-width: none; */
+            /* overflow-y: hidden; */
+            /* overflow-x: hidden; */
+        }
+
+        nav {
+            font-size: 12px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            width: 100%;
+            top: 0;
+            position: fixed;
+            display: flex;
+            height: 8vh;
+            padding: 0 40px;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav ul {
+            gap: 10px;
+            display: flex;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav ul li {
+            padding: 6px 3px;
+            border-radius: 4px;
+            color: red;
+            background: #030303;
+        }
+
+        .logo img {
+            cursor: pointer;
+            height: 30px;
+            width: 80px;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo span {
+            display: none;
+        }
+
+        .logo ul {
+            gap: 15px;
+            font-weight: 100;
+        }
+
+        .logo ul li {
+            color: #fff;
+            cursor: pointer;
+            transition: .5s;
+        }
+
+        .logo ul li:hover {
+            font-weight: 900;
+            color: #fff;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .header_img {
+            height: 600px;
+            width: 100%;
+            position: absolute;
+            z-index: -1;
+            opacity: .4;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url("../netflixy/img_vids/images\ \(6\).jpeg");
+
+        }
+
+        .headerContent {
+            padding: 0 40px;
+            height: 500px;
+            width: 70vw;
+            gap: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            flex-direction: column;
+        }
+
+        .headerContent h1 {
+            font-size: 55px;
+            font-family: monospace;
+            font-weight: 100;
+        }
+
+        .headerContent h3 {
+            font-size: 18px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 100;
+        }
+
+        .headerContent p {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 100;
+            font-size: 12px;
+        }
+
+        .buttons button {
+            border-radius: 3px;
+            outline: none;
+            cursor: pointer;
+            border: none;
+            font-size: 15px;
+            padding: 10px 20px;
+            background: rgba(128, 128, 128, 0.63);
+            color: #fff;
+            font-weight: 600;
+
+        }
+
+        .buttons button:hover {
+            background: #ffffff;
+            color: #030303;
+            font-weight: 600;
+        }
+
+        section {
+            margin: 0 0 10px 0;
+            padding: 0 0 0 40px;
+        }
+
+        section span {
+            font-size: 14px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .section_one_content ul {
+            gap: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 170px;
+            scroll-behavior: smooth;
+            /* overflow: scroll; */
+            overflow-x: scroll;
+            scrollbar-width: none;
+            overflow-y: hidden;
+        }
+
+        #section_one div ul li iframe {
+            border-radius: 4px;
+            height: 150px;
+            width: 250px;
+
+        }
+
+        .section_two_content ul {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            width: 100%;
+            height: 170px;
+            scroll-behavior: smooth;
+            overflow-x: scroll;
+            scrollbar-width: none;
+            overflow-y: hidden;
+            gap: 5px;
+        }
+
+        .section_three_content ul {
+            gap: 5px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            width: 100%;
+            height: 170px;
+            scroll-behavior: smooth;
+            overflow-x: scroll;
+            scrollbar-width: none;
+            overflow-y: hidden;
+        }
+
+        .section_four_content ul {
+            gap: 5px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            width: 100%;
+            height: 170px;
+            scroll-behavior: smooth;
+            overflow-x: scroll;
+            scrollbar-width: none;
+            overflow-y: hidden;
+        }
+
+        .section_five_content ul {
+            gap: 5px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            width: 100%;
+            height: 170px;
+            scroll-behavior: smooth;
+            overflow-x: scroll;
+            scrollbar-width: none;
+            overflow-y: hidden;
+        }
+
+        section img {
+            border-radius: 4px;
+            height: 150px;
+            width: 250px;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width : 720px) {
+            .logo ul li:nth-child(6) {
+                display: none;
+            }
+
+        }
+
+        @media screen and (max-width : 600px) {
+            .logo ul li:nth-child(5) {
+                display: none;
+            }
+
+        }
+
+        @media screen and (max-width : 550px) {
+            .logo ul li:nth-child(4) {
+                display: none;
+            }
+
+            .headerContent h1 {
+                font-size: 35px;
+            }
+
+            .headerContent h3 {
+                font-size: 15px;
+            }
+
+            .headerContent p {
+                font-size: 10px;
+            }
+
+            .buttons button {
+                font-size: 12px;
+            }
+        }
+
+        @media screen and (max-width : 460px) {
+            .logo span {
+                display: flex;
+                transform: rotate(90deg);
+            }
+
+            .logo ul li {
+                display: none;
+            }
+
+            .logo img {
+                height: 20px;
+                width: 60px;
+
+            }
+
+            .header_img {
+                height: 400px;
+            }
+
+            .headerContent {
+
+                height: 350px;
+            }
+
+            .headerContent h1 {
+                font-size: 25px;
+            }
+
+            .headerContent h3 {
+                font-size: 12px;
+            }
+
+            .headerContent p {
+                font-size: 8px;
+            }
+
+            .buttons button {
+                font-size: 10px;
+                padding: 6px 14px;
+            }
+
+            nav {
+                height: 6vh;
+                justify-content: space-between;
+                padding: 0 40px;
+                width: 100%;
+            }
+
+            .nav ul li {
+                font-size: 10px;
+            }
+
+            #section_one div ul li iframe {
+                height: 90px;
+                width: 180px;
+            }
+
+            section img {
+                height: 100px;
+                width: 200px;
+            }
+
+            .section_one_content ul {
+                height: 130px;
+            }
+
+            .section_two_content ul {
+                height: 130px;
+            }
+
+            .section_three_content ul {
+                height: 130px;
+            }
+
+            .section_four_content ul {
+                height: 130px;
+            }
+
+            .section_five_content ul {
+                height: 130px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header_img"></div>
+        <nav>
+            <div class="logo">
+                <span>III</span>
+                <img src="../netflixy/img_vids/netflix_logo.png" alt="#logo">
+                <ul>
+                    <li>Home</li>
+                    <li>TV Shows</li>
+                    <li>Movies</li>
+                    <li>New & Popular</li>
+                    <li>My List</li>
+                    <li>Browse by Languages</li>
+                </ul>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li>sear<i class='bx bx-search-alt-2'></i></li>
+                    <li>noti<i class='bx bx-bell'></i></li>
+                    <li>log</li>
+                </ul>
+            </div>
+        </nav>
+        <div class="headerContent">
+            <h1>Series Title</h1>
+            <h3>Watch Season 3 Now</h3>
+            <p>discription Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi psum dolor sit amet
+                consectetur ullam consequuntur ipsa.</p>
+            <div class="buttons">
+                <button id="btn"> Play</button>
+                <button> More Info</button>
+            </div>
+        </div>
+    </header>
+    <section id="section_one">
+        <span>My Special List</span>
+        <div class="section_one_content">
+            <ul>
+                <li><iframe width="100%" height="100%"
+                        src="https://www.youtube.com/embed/UEJuNHOd8Dw?si=CEp56ykFvJ5ScBGW" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe></li>
+                <li><iframe width="100%" height="100%"
+                        src="https://www.youtube.com/embed/UEJuNHOd8Dw?si=CEp56ykFvJ5ScBGW" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe></li>
+                <li><iframe width="100%" height="100%"
+                        src="https://www.youtube.com/embed/UEJuNHOd8Dw?si=CEp56ykFvJ5ScBGW" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe></li>
+                <li><iframe width="100%" height="100%"
+                        src="https://www.youtube.com/embed/UEJuNHOd8Dw?si=CEp56ykFvJ5ScBGW" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe></li>
+                <li><iframe width="100%" height="100%"
+                        src="https://www.youtube.com/embed/UEJuNHOd8Dw?si=CEp56ykFvJ5ScBGW" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe></li>
+
+                <!-- <li><img src="../netflixy/img_vids/images (7).jpg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (6).jpeg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (5).jpeg" alt=""></li> -->
+            </ul>
+        </div>
+    </section>
+    <section id="section_two">
+        <span>Continue Watching</span>
+        <div class="section_two_content">
+            <ul>
+                <li><img src="../netflixy/img_vids/images (11).jpg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (9).jpg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (8).jpg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (6).jpeg" alt=""></li>
+            </ul>
+    </section>
+    <section id="section_three">
+        <span>New Releases</span>
+        <div class="section_three_content">
+            <ul>
+                <li><img src="../netflixy/img_vids/images (7).jpg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (2).jpeg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (4).jpeg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (3).jpeg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (7).jpg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (8).jpg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (6).jpeg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (11).jpg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (5).jpeg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (9).jpg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (7).jpg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (2).jpeg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (4).jpeg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (3).jpeg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (7).jpg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (8).jpg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (6).jpeg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (11).jpg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (5).jpeg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (9).jpg" alt=""></li>
+            </ul>
+        </div>
+    </section>
+    <section id="section_four">
+        <span>Trending Now</span>
+        <div class="section_four_content">
+            <ul>
+                <li><img src="../netflixy/img_vids/images (8).jpg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (6).jpeg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (11).jpg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (5).jpeg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (9).jpg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (7).jpg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (2).jpeg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (4).jpeg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (11).jpg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (5).jpeg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (9).jpg" alt=""></li>
+            </ul>
+        </div>
+    </section>
+    <section id="section_five">
+        <span>Comedy</span>
+        <div class="section_five_content">
+            <ul>
+                <li><img src="../netflixy/img_vids/images (7).jpg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (2).jpeg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (4).jpeg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (8).jpg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (5).jpeg" alt=""></li>
+                <li><img src="../netflixy/img_vids/images (9).jpg" alt=""></li>
+            </ul>
+        </div>
+    </section>
+    <section id="fun" style="display: flex; justify-content: space-between;">
+        <video height="400" width="250" controls autoplay>
+            <source src="../netflixy/img_vids/anil_singh_0009-13-11-2023-0001.mp4" type="">
+        </video>
+        <video height="400" width="250" controls autoplay>
+            <source src="../netflixy/img_vids/5446thave-18-03-2024-0001.mp4" type="">
+        </video>
+    </section>
+    <footer>
+
+    </footer>
+    <script>
+        document.getElementById("fun").style.display = "none"
+        var btn = document.getElementById("btn")
+
+        btn.addEventListener("click", play)
+        function play() {
+            document.getElementById("fun").style.display = "flex"
+        }
+    </script>
+</body>
+
+</html>
